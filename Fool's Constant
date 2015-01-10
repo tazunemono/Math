@@ -1,0 +1,27 @@
+__author__ = 'Devin Pantess'
+
+# a cheap and sleazy rational approximation of pi (or any other irrational number)
+
+# let's import the math library and use it's value of Pi (or math.e)
+import math as m
+
+# this is my function to return two integers which approximate an irrational
+def foolconstant():
+    # n is the number of times to iterate. Larger numbers yield a better approximation.
+    n = 1000000
+    # mconst is the constant you with to approximate (pi or e)
+    myconst = m.pi
+    # temp list stores the results modulo 1
+    temp = list()
+    # temp2 list stores the results
+    temp2 = list()
+    for i in range(1, n):
+        temp.append(i * myconst % 1)
+        temp2.append(i * myconst)
+    result = max((k, j) for j, k in enumerate(temp))
+    return m.ceil((temp2[(result[1])])), result[1]+1, myconst
+
+answer = foolconstant()
+print ("The number", answer[0], "divided by", answer[1], "will approximate the input constant to", answer[2] / (answer[0] / answer[1]) * 100, "percent")
+
+# it isn't pretty but it works!
