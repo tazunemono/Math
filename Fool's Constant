@@ -2,7 +2,7 @@ __author__ = 'Devin Pantess'
 
 # a cheap and sleazy rational approximation of pi (or any other irrational number)
 
-# let's import the math library and use it's value of Pi (or math.e)
+# let's import the math library and use its value of Pi (or math.e)
 import math as m
 
 # this is my function to return two integers which approximate an irrational
