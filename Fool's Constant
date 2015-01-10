@@ -16,9 +16,13 @@ def foolconstant():
     # temp2 list stores the results
     temp2 = list()
     for i in range(1, n):
+        # taking an irrational times itself a number of times generates a range of decimal values modulo 1. 
+        # the largest decimal value modulo 1 is the best representation of a rational demoninator. 
         temp.append(i * myconst % 1)
         temp2.append(i * myconst)
+    # once we cycle thru, let's fond the largest decimal (modulo 1)
     result = max((k, j) for j, k in enumerate(temp))
+    #return the "rounded up" value, the indexed position (+ 1 since zero-indexed), and the original constant
     return m.ceil((temp2[(result[1])])), result[1]+1, myconst
 
 answer = foolconstant()
